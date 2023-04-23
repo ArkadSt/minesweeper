@@ -24,6 +24,7 @@ void Game::setMines(int m_mines_count)
     mines = m_mines_count;
 }
 
+// creates board according to the size member
 void Game::createBoard()
 {
     for (int i = 0; i < size; i++)
@@ -36,6 +37,7 @@ void Game::createBoard()
     }
 }
 
+// places the number of mines specified in the mines member
 void Game::placeMines()
 {
     srand(time(NULL));
@@ -57,6 +59,7 @@ vector<pair<int, int>> Game::getMineLocations() {
     return mineLocations;
 }
 
+// compares each mine location to the given coordinates and returns true if the given coordinates are the location of a mine
 bool Game::hasMine(pair<int, int> coords) {
     for (auto mine : mineLocations){
         if (mine.first == coords.first && mine.second == coords.second){

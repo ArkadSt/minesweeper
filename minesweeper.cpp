@@ -31,6 +31,7 @@ int main(){
     game.placeMines();
 
     int total = 0;
+    // game loop
     while (true) {
         for (int i = 0; i < game.getSize(); i++) {
             for (int j = 0; j < game.getSize(); j++) {
@@ -46,7 +47,6 @@ int main(){
         cout << "Hit Y coordinate: ";
         int y;
         cin >> y;
-
 
         if (game.hasMine(make_pair(x, y))) {
             cout << "You hit the mine! Game over \n";
@@ -76,11 +76,7 @@ int main(){
         vector<vector<char>> board = game.getBoard();
         board.at(x).at(y) = '0' + bordering;
         game.setBoard(board);
-
-
     }
-
-
 
     return 0;
 }
