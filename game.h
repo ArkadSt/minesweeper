@@ -1,10 +1,12 @@
 #include <vector>
+using namespace std;
+
 
 class Game{
     int size; // size of game board
     int mines; // number of mines
-    std::vector<std::vector<char>> board;
-    std::vector<int[2]> mineLocations;
+    vector<vector<char>> board;
+    vector<pair<int, int>> mineLocations;
 public:
     Game();
     Game(int size, int mines);
@@ -13,5 +15,9 @@ public:
     int getMines();
     void setMines(int m_mines_count);
     void createBoard();
+    vector<vector<char>> getBoard();
+    void setBoard(vector<vector<char>>);
     void placeMines();
+    vector<pair<int, int>> getMineLocations();
+    bool hasMine(pair<int, int>);
 };

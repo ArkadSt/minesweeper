@@ -28,9 +28,10 @@ void Game::createBoard()
 {
     for (int i = 0; i < size; i++)
     {
+        board.emplace_back();
         for (int j = 0; j < size; j++)
         {
-            board.at(i).at(j) = '-';
+            board.at(i).push_back('-');
         }
     }
 }
@@ -40,9 +41,31 @@ void Game::placeMines()
     srand(time(NULL));
     for (int i = 0; i < mines; i++)
     {
-        int row = rand() % 9;
-        int col = rand() % 9;
-        mineLocations.at(i)[0] = row;
-        mineLocations.at(i)[1] = col;
+        mineLocations.emplace_back();
+        int row = rand() % size;
+        int col = rand() % size;
+        mineLocations.at(i).first = row;
+        mineLocations.at(i).second = col;
     }
+}
+
+vector<vector<char>> Game::getBoard() {
+    return board;
+}
+
+vector<pair<int, int>> Game::getMineLocations() {
+    return mineLocations;
+}
+
+bool Game::hasMine(pair<int, int> coords) {
+    for (auto mine : mineLocations){
+        if (mine.first == coords.first && mine.second == coords.second){
+            return true;
+        }
+    }
+    return false;
+}
+
+void Game::setBoard(vector<vector<char>> board) {
+    this ->board = board;
 }
