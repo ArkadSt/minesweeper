@@ -1,0 +1,14 @@
+-rootPath
+C:/Users/siim/minesweeper/guiMinesweeper/guiMinesweeper
+-cmake-output
+-output-file
+C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appguiMinesweeper.cmake
+-importPath
+C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/guiMinesweeper
+-importPath
+C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug
+-importPath
+C:/Qt/6.5.0/mingw_64/./qml
+-qrcFiles
+C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/.rcc/qmake_guiMinesweeper.qrc
+C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/.rcc/appguiMinesweeper_raw_qml_0.qrc

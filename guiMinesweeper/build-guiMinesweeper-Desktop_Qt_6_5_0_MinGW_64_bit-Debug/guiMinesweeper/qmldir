@@ -1,0 +1,5 @@
+module guiMinesweeper
+typeinfo appguiMinesweeper.qmltypes
+prefer :/guiMinesweeper/
+Main 1.0 Main.qml
+

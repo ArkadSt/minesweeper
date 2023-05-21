@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/guiMinesweeper">C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/guiMinesweeper</file>
+
+  </qresource>
+</RCC>

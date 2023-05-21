@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-2179cac3e01a726ca26c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "guiMinesweeper",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-31dd53ee96c015d07de5.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-706953f0190cc1f1254d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-b9f5804bf6163ad4567e.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-9e029c97f43b88bfd73f.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper-Debug-e252359617e1b574b4c3.json",
+					"name" : "appguiMinesweeper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_autogen-Debug-9070410472b2b1188a90.json",
+					"name" : "appguiMinesweeper_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_autogen_timestamp_deps-Debug-0897396b4b5c0f236087.json",
+					"name" : "appguiMinesweeper_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_qmlimportscan-Debug-dfff1d448b0a1a88edd1.json",
+					"name" : "appguiMinesweeper_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_qmllint-Debug-89450f8e8ffb98d476c6.json",
+					"name" : "appguiMinesweeper_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_qmllint_json-Debug-1f1bd72ba2ec137a9d43.json",
+					"name" : "appguiMinesweeper_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_qmllint_module-Debug-a0a72bfdfab7dd975741.json",
+					"name" : "appguiMinesweeper_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_qmltyperegistration-Debug-2847767f7b5c0a79394e.json",
+					"name" : "appguiMinesweeper_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiMinesweeper_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiMinesweeper_tooling-Debug-4375470d320edef4329f.json",
+					"name" : "appguiMinesweeper_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/siim/minesweeper/guiMinesweeper/build-guiMinesweeper-Desktop_Qt_6_5_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/siim/minesweeper/guiMinesweeper/guiMinesweeper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
