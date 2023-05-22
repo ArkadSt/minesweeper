@@ -84,7 +84,7 @@ void Game::drawBoard(){
         for (int i = 0; i < getSize(); i++){
             cout << setw(spacing) << i + 1;
         }
-        cout << '\n';
+        cout << "X/Y\n";
         
         // game board itself
         for (int i = 0; i < getSize(); i++) {
@@ -117,4 +117,39 @@ int Game::numDigits()
         digits++;
     }
     return digits;
+}
+
+// reveals all tiles next to the tile selected by the user if the tile has zero bombs next to it,
+// does the same recursively for every 0 bomb tile that the last tile revealed
+void Game::exposeEmpty(int x, int y){
+    int bordering = 0;
+    for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+            if (x+i >= 0 && y+j >= 0 && x+i < getSize() && y+j < getSize()){
+                if (!(i == 0 && j == 0) && hasMine(make_pair(x+i, y+j))) {
+                    bordering++;
+                }
+            }
+        }
+    }
+
+    vector<vector<char>> board = getBoard();
+    board.at(x).at(y) = '0' + bordering;
+    setBoard(board);
+
+    if (bordering == 0){
+        // cout << "bordering = 0\n";
+        // siin võib selle kohta ohutuks märkida
+
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (x+i >= 0 && y+j >= 0 && x+i < getSize() && y+j < getSize()){
+                    if (!(i == 0 && j == 0) && !hasMine(make_pair(x+i, y+j)) && (getBoard().at(x+i).at(y+j) == '-')) {
+                        // cout << "x: " << x+i << " y: " << y+j << '\n';
+                        exposeEmpty(x+i, y+j);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -23,5 +23,6 @@ public:
 
     void drawBoard();
     int numDigits();
+    void exposeEmpty(int x, int y);
 
 };

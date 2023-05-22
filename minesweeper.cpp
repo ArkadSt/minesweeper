@@ -1,40 +1,7 @@
 #include <iostream>
 #include "game.h"
 
-void exposeEmpty(Game& game, int x, int y){
-    int bordering = 0;
-    for (int i = -1; i <= 1; i++) {
-        for (int j = -1; j <= 1; j++) {
-            if (x+i >= 0 && y+j >= 0 && x+i < game.getSize() && y+j < game.getSize()){
-                if (!(i == 0 && j == 0) && game.hasMine(make_pair(x+i, y+j))) {
-                    bordering++;
-                }
-            }
-        }
-    }
 
-    vector<vector<char>> board = game.getBoard();
-    board.at(x).at(y) = '0' + bordering;
-    game.setBoard(board);
-
-    if (bordering == 0){
-        cout << "bordering = 0\n";
-        // siin võib selle kohta ohutuks märkida
-
-        for (int i = -1; i <= 1; i++) {
-            for (int j = -1; j <= 1; j++) {
-                if (x+i >= 0 && y+j >= 0 && x+i < game.getSize() && y+j < game.getSize()){
-                    if (!(i == 0 && j == 0) && !game.hasMine(make_pair(x+i, y+j)) && (game.getBoard().at(x+i).at(y+j) == '-')) {
-                        cout << "x: " << x+i << " y: " << y+j << '\n';
-                        exposeEmpty(game, x+i, y+j);
-                    }
-                }
-            }
-        }
-    }
-
-
-}
 
 int main(){
 
@@ -75,7 +42,9 @@ int main(){
 
         cout << "Type coordinates X Y: ";
         int x, y;
-        cin >> x >> y;
+        cin >> y >> x;
+        x -= 1;
+        y -= 1;
 
         if (!(x >= 0 && y >= 0 && x < game.getSize() && y < game.getSize())){
             cout << "Incorrect coordinates\n";
@@ -94,9 +63,7 @@ int main(){
             return 0;
         }
 
-        exposeEmpty(game, x, y);
-
+        game.exposeEmpty(x, y);
     }
-
     return 0;
 }
