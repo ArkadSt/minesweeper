@@ -65,7 +65,7 @@ int main(){
         // }
 
 
-        game.exposeEmpty(x, y);
+        game.updateMapOnHit(x, y);
         
         if (game.hasOnlyMines()){
             cout << "You won!\n";

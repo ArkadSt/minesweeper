@@ -25,6 +25,6 @@ public:
     void drawBoard();
     void drawBoardWithMines();
     int numDigits();
-    void exposeEmpty(int x, int y);
+    void updateMapOnHit(int x, int y);
 
 };

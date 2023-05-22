@@ -46,13 +46,24 @@ void Game::placeMines()
     srand(time(NULL));
     for (int i = 0; i < mines; i++)
     {
+        int row, col;
+
+        while (true) {
+            row = rand() % size;
+            col = rand() % size;
+            for (auto & mineLocation : mineLocations) {
+                if (mineLocation.first == row && mineLocation.second == col) {
+                    goto cnt;
+                }
+            }
+            break;
+            cnt:;
+        }
         mineLocations.emplace_back();
-        int row = rand() % size;
-        int col = rand() % size;
         mineLocations.at(i).first = row;
         mineLocations.at(i).second = col;
     }
-    }
+}
 
 vector<vector<char>> Game::getBoard() {
     return board;
@@ -180,7 +191,7 @@ int Game::numDigits()
 
 // reveals all tiles next to the tile selected by the user if the tile has zero bombs next to it,
 // does the same recursively for every 0 bomb tile that the last tile revealed
-void Game::exposeEmpty(int x, int y){
+void Game::updateMapOnHit(int x, int y){
     int bordering = 0;
     for (int i = -1; i <= 1; i++) {
         for (int j = -1; j <= 1; j++) {
@@ -206,7 +217,7 @@ void Game::exposeEmpty(int x, int y){
                 if (x+i >= 0 && y+j >= 0 && x+i < getSize() && y+j < getSize()){
                     if (!(i == 0 && j == 0) && !hasMine(make_pair(x+i, y+j)) && (getBoard().at(x+i).at(y+j) == '-')) {
                         // cout << "x: " << x+i << " y: " << y+j << '\n';
-                        exposeEmpty(x+i, y+j);
+                        updateMapOnHit(x + i, y + j);
                     }
                 }
             }
