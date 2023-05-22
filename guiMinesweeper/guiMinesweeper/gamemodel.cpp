@@ -15,11 +15,13 @@ int GameModel::columnCount(const QModelIndex &) const
     return column;
 }
 
-QVariant GameModel::data(const QModelIndex &index, int role) const
+QVariant GameModel::data(const QModelIndex &index, int value) const
 {
-    switch (role) {
-    case Qt::DisplayRole:
-        return (QString)board.at(index.row()).at(index.column());//1;//QString("%1, %2").arg(index.column()).arg(index.row());
+    switch (value) {
+    case Revealed:
+        return (QString)board.at(index.row()).at(index.column());
+    case Hidden:
+        return "1";
     default:
         break;
     }
@@ -29,7 +31,10 @@ QVariant GameModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> GameModel::roleNames() const
 {
-    return { {Qt::DisplayRole, "display"} };
+    QHash<int, QByteArray> values;
+    values[Revealed] = "revealed";
+    values[Hidden] = "hidden";
+    return values;
 }
 
 void GameModel::createBoard()

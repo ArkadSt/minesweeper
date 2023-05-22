@@ -25,8 +25,12 @@ Window {
              border.width: 1
 
              color: "#b5b7bf"
+             MouseArea {
+                 anchors.fill: parent
+                 //onClicked: parent.
+             }
              Text {
-                 text: display
+                 text: isClicked ? revealed : hidden
                  font.pointSize: 12
                  anchors.centerIn: parent
              }

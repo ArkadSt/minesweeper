@@ -13,8 +13,9 @@ public:
     QList<QList<char>> board;
     QList<QPair<int, int>> mineLocations;
     QList<char> oneRow;
+    bool isClicked = false;
 
-    enum Roles{
+    enum Values{
         Hidden,
         Revealed
     };
