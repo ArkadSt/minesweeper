@@ -35,13 +35,9 @@ int main(){
     while (true) {
         game.drawBoard();
 
-        cout << "Hit X coordinate: ";
-        int x;
-        cin >> x;
-
-        cout << "Hit Y coordinate: ";
-        int y;
-        cin >> y;
+        cout << "Type coordinates X Y: ";
+        int x, y;
+        cin >> x >> y;
 
         if (game.hasMine(make_pair(x, y))) {
             cout << "You hit the mine! Game over \n";
