@@ -49,7 +49,7 @@ void Game::placeMines()
         mineLocations.at(i).first = row;
         mineLocations.at(i).second = col;
     }
-}
+    }
 
 vector<vector<char>> Game::getBoard() {
     return board;
