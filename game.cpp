@@ -79,9 +79,8 @@ void Game::setBoard(vector<vector<char>> board) {
 void Game::drawBoard(){
         int spacing = numDigits() + 1;
 
-        cout << left;
         // top row of indices
-        cout << setw(spacing) << " ";
+        cout << left << setw(spacing) << " ";
         for (int i = 0; i < getSize(); i++){
             cout << setw(spacing) << i + 1;
         }
@@ -89,14 +88,11 @@ void Game::drawBoard(){
         
         // game board itself
         for (int i = 0; i < getSize(); i++) {
-            if (i < 9 && spacing > 2){
-                cout << right;
-                cout << setw(spacing - 1) << i + 1 << " ";
-                cout << left;
-            }
-            else{
+            if (i < 9 && spacing > 2)
+                cout << right << setw(spacing - 1) << i + 1 << " " << left;
+            else
                 cout << setw(spacing) << i + 1;
-            }
+
             for (int j = 0; j < getSize(); j++) {
                 cout << setw(spacing) << getBoard().at(i).at(j);
             }
