@@ -23,7 +23,7 @@ int main(){
             game = Game(16, 40);
             break;
         case 3:
-            game = Game(25, 99);
+            game = Game(24, 99);
             break;
     }
 
@@ -33,12 +33,7 @@ int main(){
     int total = 0;
     // game loop
     while (true) {
-        for (int i = 0; i < game.getSize(); i++) {
-            for (int j = 0; j < game.getSize(); j++) {
-                cout << game.getBoard().at(i).at(j) << ' ';
-            }
-            cout << '\n';
-        }
+        game.drawBoard();
 
         cout << "Hit X coordinate: ";
         int x;

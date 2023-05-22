@@ -1,6 +1,9 @@
 #include "game.h"
 #include <cstdlib>
 #include <time.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
 
 // constructors
 Game::Game(){}
@@ -71,4 +74,51 @@ bool Game::hasMine(pair<int, int> coords) {
 
 void Game::setBoard(vector<vector<char>> board) {
     this ->board = board;
+}
+
+void Game::drawBoard(){
+        int spacing = numDigits() + 1;
+
+        cout << left;
+        // top row of indices
+        cout << setw(spacing) << " ";
+        for (int i = 0; i < getSize(); i++){
+            cout << setw(spacing) << i + 1;
+        }
+        cout << '\n';
+        
+        // game board itself
+        for (int i = 0; i < getSize(); i++) {
+            if (i < 9 && spacing > 2){
+                cout << right;
+                cout << setw(spacing - 1) << i + 1 << " ";
+                cout << left;
+            }
+            else{
+                cout << setw(spacing) << i + 1;
+            }
+            for (int j = 0; j < getSize(); j++) {
+                cout << setw(spacing) << getBoard().at(i).at(j);
+            }
+            cout << i + 1 << '\n';
+        }
+
+        // bottom row of indices
+        cout << setw(spacing) << " ";
+        for (int i = 0; i < getSize(); i++){
+            cout << setw(spacing) << i + 1;
+        }
+        cout << '\n';
+}
+
+// finds number of digits in the size of the largest row/column in the game board
+int Game::numDigits()
+{
+    int size = getSize();
+    int digits = 0;
+    while (size) {
+        size /= 10;
+        digits++;
+    }
+    return digits;
 }
