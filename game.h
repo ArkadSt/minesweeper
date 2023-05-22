@@ -20,8 +20,10 @@ public:
     void placeMines();
     vector<pair<int, int>> getMineLocations();
     bool hasMine(pair<int, int>);
+    bool hasOnlyMines();
 
     void drawBoard();
+    void drawBoardWithMines();
     int numDigits();
     void exposeEmpty(int x, int y);
 

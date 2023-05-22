@@ -72,6 +72,18 @@ bool Game::hasMine(pair<int, int> coords) {
     return false;
 }
 
+bool Game::hasOnlyMines(){
+    int total = 0;
+    for (int i = 0; i < getBoard().size(); i++)
+    {
+        for (int j = 0; j < getBoard().at(i).size(); j++)
+        {
+            if (getBoard().at(i).at(j) == '-') total++;
+        }
+    }
+    return total == mineLocations.size();
+}
+
 void Game::setBoard(vector<vector<char>> board) {
     this ->board = board;
 }
@@ -107,6 +119,51 @@ void Game::drawBoard(){
         cout << '\n';
 }
 
+void Game::drawBoardWithMines(){
+    int spacing = numDigits() + 1;
+
+    // top row of indices
+    cout << left << setw(spacing) << " ";
+    for (int i = 0; i < getSize(); i++){
+        cout << setw(spacing) << i + 1;
+    }
+    cout << "X/Y\n";
+    
+    // game board itself
+    for (int i = 0; i < getSize(); i++) {
+        if (i < 9 && spacing > 2)
+            cout << right << setw(spacing - 1) << i + 1 << " " << left;
+        else
+            cout << setw(spacing) << i + 1;
+
+        for (int j = 0; j < getSize(); j++) {
+            char tile = getBoard().at(i).at(j);
+            // if (tile == '-')
+            //     cout << setw(spacing) << 'X';
+            // else
+            bool isBomb = false;
+            vector<pair<int, int>>::iterator it = mineLocations.begin();
+            for (it; it < mineLocations.end(); it++){
+                if (it->first == i && it->second == j){
+                    cout << setw(spacing) << 'X';
+                    isBomb = true;
+                    mineLocations.erase(it);
+                    break;
+                }
+            }
+            if (!isBomb) cout << setw(spacing) << tile;
+        }
+        cout << i + 1 << '\n';
+    }
+
+    // bottom row of indices
+    cout << setw(spacing) << " ";
+    for (int i = 0; i < getSize(); i++){
+        cout << setw(spacing) << i + 1;
+    }
+    cout << '\n';
+}
+
 // finds number of digits in the size of the largest row/column in the game board
 int Game::numDigits()
 {
@@ -134,7 +191,8 @@ void Game::exposeEmpty(int x, int y){
     }
 
     vector<vector<char>> board = getBoard();
-    board.at(x).at(y) = '0' + bordering;
+    if (bordering == 0) board.at(x).at(y) = ' ';
+    else board.at(x).at(y) = '0' + bordering;
     setBoard(board);
 
     if (bordering == 0){

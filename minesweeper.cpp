@@ -35,7 +35,7 @@ int main(){
     game.createBoard();
     game.placeMines();
 
-    int total = 0;
+    // int total = 0;
     // game loop
     while (true) {
         game.drawBoard();
@@ -52,13 +52,18 @@ int main(){
         }
 
         if (game.hasMine(make_pair(x, y))) {
+            game.drawBoardWithMines();
             cout << "You hit the mine! Game over \n";
             return 0;
         }
 
-        total++;
+        // total++;
 
-        if (game.getSize() * game.getSize() - total == game.getMines()){
+        // if (game.getSize() * game.getSize() - total == game.getMines()){
+        //     cout << "You won!\n";
+        //     return 0;
+        // }
+        if (game.hasOnlyMines()){
             cout << "You won!\n";
             return 0;
         }
