@@ -81,6 +81,8 @@ bool Game::hasOnlyMines(){
             if (getBoard().at(i).at(j) == '-') total++;
         }
     }
+    cout << "total lines found: " << total << '\n';
+    cout << "total mines: " << mineLocations.size() << '\n';
     return total == mineLocations.size();
 }
 

@@ -63,12 +63,14 @@ int main(){
         //     cout << "You won!\n";
         //     return 0;
         // }
+
+
+        game.exposeEmpty(x, y);
+        
         if (game.hasOnlyMines()){
             cout << "You won!\n";
             return 0;
         }
-
-        game.exposeEmpty(x, y);
     }
     return 0;
 }
